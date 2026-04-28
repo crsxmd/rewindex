@@ -186,11 +186,21 @@ Explain **what you accomplished**, not just what changed.
 
 ### Undoing changes
 
+**Always check log first**, then pick the right scope:
+
 ```bash
-rewindex log --limit 10           # 1. find the target
-rewindex rewind D1VS v4 --yes     # 2a. rewind one file
-rewindex rewind SS3 --yes         # 2b. or rewind entire project state
+rewindex log --detail --limit 10  # 1. check what happened (shows SS, FileIDs, versions)
 ```
+
+**2. Decide rewind scope:**
+
+| User intent | Action |
+|---|---|
+| "undo everything you just did" / "go back to before" / "it was working before your changes" | `rewindex rewind SS<n> --yes` (full project restore) |
+| "revert this file" / mentions a specific file | `rewindex rewind <FileID> <version> --yes` (single file) |
+| "undo the last change" / one small edit went wrong | `rewindex rewind SN -1 --yes` (undo last snapshot) |
+
+**When unsure, prefer `rewind SS`** — it restores the full project state and is the safest option.
 
 ### Before starting work
 
