@@ -1,6 +1,6 @@
 ---
 name: rewindex
-version: 1.0.2
+version: 3
 description: |
   Rewindex is a file snapshot tool that runs as a background daemon. Use this skill when:
   - The user asks to view, rewind, or manage file snapshots

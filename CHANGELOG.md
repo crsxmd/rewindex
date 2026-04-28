@@ -1,5 +1,12 @@
 # Rewindex Changelog
 
+## v1.0.4 — 2026-04-28
+
+- Improved snapshot history output
+- Documentation updates
+
+---
+
 ## v1.0.2 — 2026-04-27
 
 - Bug fixes and stability improvements

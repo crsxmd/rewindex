@@ -1,6 +1,6 @@
 # Rewindex — Command Reference
 
-> Reference version: 1.0.3
+> Reference version: 2
 
 Full command documentation. For installation see [README](README.md). For AI agent setup see [AI-SETUP.md](AI-SETUP.md).
 
