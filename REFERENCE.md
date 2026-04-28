@@ -1,6 +1,6 @@
 # Rewindex — Command Reference
 
-> Reference version: 2
+> Reference version: 3
 
 Full command documentation. For installation see [README](README.md). For AI agent setup see [AI-SETUP.md](AI-SETUP.md).
 
@@ -111,7 +111,8 @@ rewindex
 │   └── SN<n>
 │
 ├── member                                  Show current plan
-│   └── --license <key>                     Activate a Pro license key
+│   ├── --license <key>                     Activate a Pro license key
+│   └── --deactivate                        Deactivate license on this machine
 │
 ├── setting                                 Show or update session limit settings
 │   ├── --safe <n>
@@ -295,7 +296,10 @@ Running `note` on a target that already has a note replaces it. Max 256 characte
 ```bash
 rewindex member                          # show current plan
 rewindex member --license [key]          # activate a Pro license key
+rewindex member --deactivate             # deactivate license on this machine
 ```
+
+Deactivating releases the license so it can be activated on another device.
 
 ---
 

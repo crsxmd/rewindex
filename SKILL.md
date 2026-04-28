@@ -1,6 +1,6 @@
 ---
 name: rewindex
-version: 3
+version: 4
 description: |
   Rewindex is a file snapshot tool that runs as a background daemon. Use this skill when:
   - The user asks to view, rewind, or manage file snapshots
@@ -145,6 +145,7 @@ rewindex project exclude add "*.log" -p my-app                # per-project excl
 ```bash
 rewindex member                    # show current plan
 rewindex member --license <key>    # activate a Pro license key
+rewindex member --deactivate       # deactivate license on this machine
 ```
 
 ### `setting` — Session limits
@@ -229,3 +230,4 @@ rewindex log --limit 20
 | `rewind SS` (session) | Full project-state restore — all tracked files |
 | File > 10 MB or binary | Silently skipped |
 | Low disk (<100 MB free) | Snapshots paused, warning shown |
+| Project over free tier limit | Shows `(paused)`, snap/note/rewind blocked |

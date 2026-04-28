@@ -1,5 +1,16 @@
 # Rewindex Changelog
 
+## v1.0.5 — 2026-04-28
+
+- License activation now uses direct API (faster, more reliable)
+- Added `rewindex member --deactivate` to release license for use on another device
+- Projects exceeding free tier limit now show as paused
+- Paused projects are now blocked from snap, note, and rewind
+- Improved license validation and error handling
+- Improved error messages for license activation
+
+---
+
 ## v1.0.4 — 2026-04-28
 
 - Improved snapshot history output
