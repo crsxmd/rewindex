@@ -6,6 +6,30 @@ Full command documentation. For installation see [README](README.md). For AI age
 
 ---
 
+## Table of Contents
+
+- [Activate for your AI agent](#activate-for-your-ai-agent)
+- [Project Selection](#project-selection)
+- [ID Format](#id-format)
+- [Command Tree](#command-tree)
+- [Setup](#setup) — init, start, stop, restart, status
+- [History](#history) — log, diff
+- [Snapshots](#snapshots) — snap
+- [Rewind & Restore](#rewind--restore) — rewind
+- [Annotate](#annotate) — note
+- [Membership](#membership) — member, deactivate
+- [Settings](#settings) — setting, precompute
+- [Project Management](#project-management) — add, remove, rename, folders, exclude
+- [Cleanup](#cleanup) — trash management
+- [Maintenance](#maintenance) — update, uninstall
+- [Configuration](#configuration) — config file, security exclusions
+- [How Snapshots Work](#how-snapshots-work) — fullbase, pre-compute, version labels
+- [Auto-Trim](#auto-trim)
+- [Session Grouping](#session-grouping)
+- [FAQ](#faq)
+
+---
+
 ## Activate for your AI agent
 
 **1. Install Rewindex**
@@ -399,9 +423,57 @@ These files are **never** snapshotted regardless of config:
 
 ---
 
+## How Snapshots Work
+
+Rewindex stores file changes as **diffs** (differences from the previous version), not full copies. This keeps storage small but means rewinding a file requires reconstructing it by replaying diffs from the nearest **fullbase** (a complete copy of the file at a point in time).
+
+### Fullbase
+
+A fullbase is a full copy of a file stored at a specific version. It acts as a starting point for reconstruction. Without a fullbase, rewinding to version 50 would mean replaying all 50 diffs from the beginning.
+
+Fullbase snapshots are created automatically:
+- **v1 (Original)**: the first time a file is tracked, a full copy is always stored
+- **Trim base**: when old sessions are trimmed, a fullbase is written for each affected file so rewind still works
+- **Pre-compute** (Pro): periodic fullbase snapshots to keep rewind fast
+
+### Pre-compute Fullbase (Pro)
+
+When enabled, Rewindex writes a fullbase every `cut` sessions (where `cut = max - safe`). This limits the worst-case reconstruction to at most `cut` diffs instead of the entire history.
+
+Example with default settings (`safe = 400`, `max = 500`, `cut = 100`):
+- Without pre-compute: rewind may need to replay up to 400+ diffs
+- With pre-compute: rewind never replays more than 100 diffs
+
+Enable with:
+
+```bash
+rewindex setting precompute on     # Pro only
+```
+
+### Version labels in `rewindex log <FileID>`
+
+| Label | Meaning |
+|---|---|
+| `[Original]` | v1, first time this file was tracked (full copy) |
+| `[Fullbase]` | Full copy created after trim promote |
+| `[Trim base]` | Full copy stored as reconstruction base after trim |
+| `[Pre-compute]` | Full copy pre-computed for faster rewind (Pro) |
+
+No label means the version is stored as a diff from the previous version.
+
+---
+
 ## Auto-Trim
 
-Rewindex prunes old sessions in the background when the session count reaches `max`. The oldest `cut` sessions are removed, with a fullbase written first so rewind stays fast. Configure with `rewindex setting --safe N --max M`.
+Rewindex prunes old sessions automatically in the background when the session count reaches `max`. The oldest `cut` sessions (`cut = max - safe`) are removed. Before removing, a fullbase is written for each affected file so rewind still works for the remaining history.
+
+Configure with:
+
+```bash
+rewindex setting --safe 400 --max 500    # keep 400 safe, trim when 500 reached
+```
+
+The trim removes the oldest 100 sessions (`500 - 400 = 100`). Trimming runs in the background and does not affect performance.
 
 ---
 
@@ -424,7 +496,7 @@ A: No. Everything is stored locally in `~/.rewindex/`.
 A: Very little. Diffs are compressed. Run `rewindex status` to check.
 
 **Q: Can I use it without AI agents?**
-A: Yes. Manual changes are labeled `manual`.
+A: Yes. Rewindex snapshots all file changes regardless of how they were made.
 
 **Q: Does it work on Windows?**
 A: Not yet. Linux and macOS only.
