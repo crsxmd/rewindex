@@ -5,12 +5,12 @@
 
 **Rewindex - Free version control for AI agent (AI-Native).**
 
-Every change saved automatically. Every mistake undone instantly.
+Free local version control for AI agents (auto-versioning).
 
 - Auto-snapshot every file you or your AI touches
-- Mistake? Tell your AI. AI rewinds automatically. No human command needed, no guessing.
+- Mistake? Check the log, rewind to a known good state
+- SKILL.md teaches your AI how to use it. Memory makes sure it always does.
 - No cloud. Your data stays local.
-- Just set it once and forget it. Let your AI do the rest.
 
 Works with Git. Rewind the code that you didn't commit.
 
@@ -28,9 +28,9 @@ Works with Git. Rewind the code that you didn't commit.
 
    When your AI finishes a task, all the changes are grouped into one session. Easy to find, easy to rewind.
 
-3. **AI notes it automatically**
+3. **AI notes what it did**
 
-   When your AI finishes working, it writes a note on the session. No manual logging needed.
+   When your AI finishes a task, it writes a note on the session. You can add your own notes too.
 
 4. **Rewind without guessing**
 
