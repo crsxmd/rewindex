@@ -3,7 +3,7 @@
 ![python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![license](https://img.shields.io/badge/license-proprietary-red)
 
-**Rewindex — Free local version control for AI agents (auto-versioning)**
+**Rewindex — Auto-snapshot tool for AI agents**
 
 - Auto-snapshot every file you or your AI touches
 - Mistake? Check the log, rewind to a known good state
