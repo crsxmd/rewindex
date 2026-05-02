@@ -5,6 +5,10 @@
 
 **Rewindex — Auto-snapshot tool for AI agents**
 
+Auto-snapshot for AI agents. Free. Local. Always on.
+
+Every time you or your AI saves a file, Rewindex captures a version automatically. No commits needed. When something breaks, just tell your AI "undo that" and it rolls back instantly. No cloud, no account required.
+
 - Auto-snapshot every file you or your AI touches
 - Mistake? Check the log, rewind to a known good state
 - SKILL.md teaches your AI how to use it. Memory makes sure it always does.
