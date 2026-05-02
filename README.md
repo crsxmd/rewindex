@@ -78,8 +78,12 @@ Copy the contents of [SKILL.md](SKILL.md) and paste it into the correct path for
 
 **4. Add this to your agent's memory**
 
+Copy and paste this into your agent's chat:
+
 ```
-This project uses Rewindex — a version control designed for AI agents.
+Save this to your memory:
+
+Every project I work on uses Rewindex — a version control designed for AI agents.
 It acts as a safety net: every file change is versioned automatically,
 so you can rewind to a known good state and fix mistakes faster with
 fewer wasted steps.
