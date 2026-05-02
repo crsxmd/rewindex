@@ -32,7 +32,29 @@ This guide is for AI agents installing and configuring Rewindex.
      ask the user to add the project to Rewindex first
    ```
 
-4. Ask the user for the project name, folder path, and Pro license key (if any), then run:
+4. Set up the project:
+
+   **If you already know the project name and folder** (e.g. from CWD or recent context) — suggest instead of asking:
+
+   > "I'll set up Rewindex for this project:
+   > - Name: `my-app`
+   > - Folder: `/path/to/my-app`
+   >
+   > Is that correct? If not, let me know the name, folder path, and Pro license key (if any) all at once."
+
+   If the user confirms, run:
+   ```bash
+   rewindex init --project [name] --folder [/path/to/project]
+   ```
+
+   **If the user says no, or you don't know the project** — ask in a single message:
+
+   > "Please provide:
+   > 1. Project name
+   > 2. Folder path to watch
+   > 3. Pro license key (optional — leave blank if on Free tier)"
+
+   Then run:
    ```bash
    # With license
    rewindex init --project [name] --folder [/path/to/project] --license [key]
