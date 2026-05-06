@@ -102,6 +102,24 @@ fewer wasted steps.
 
 ---
 
+## Optional: Web UI
+
+[rewindex-web](https://github.com/crsxmd/rewindex-web) is an optional local dashboard for browsing snapshots, viewing diffs, and rewinding files without the CLI.
+
+**Install (once):**
+```bash
+pipx install rewindex-web
+```
+
+**Start (each time you want to open the dashboard):**
+```bash
+rewindex-web
+```
+
+Open [http://localhost:9009](http://localhost:9009) — no extra configuration needed.
+
+---
+
 ## Pricing
 
 Free forever. No account required.

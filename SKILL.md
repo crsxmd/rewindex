@@ -1,6 +1,6 @@
 ---
 name: rewindex
-version: 4
+version: 5
 description: |
   Rewindex is a file snapshot tool that runs as a background daemon. Use this skill when:
   - The user asks to view, rewind, or manage file snapshots
@@ -219,6 +219,19 @@ rewindex log --limit 20
 - Binary files and files > 10 MB are skipped
 - Excluded by default: `.env`, `.env.*`, `node_modules/`, `.git/`, `__pycache__/`, `venv/`, `*.log`, `*.tmp`
 - Never snapshotted: SSH keys, certificates, `.npmrc`/`.pypirc`/`.netrc`, `*.secret`/`*.token`/`*.password`, `*.kubeconfig`
+
+## Optional: rewindex-web (Web UI)
+
+rewindex-web is a separate optional package — a local dashboard for browsing snapshots, viewing diffs, and rewinding files from the browser without using the CLI.
+
+**When user asks for a UI, dashboard, or wants to manage snapshots visually:**
+1. Run `pipx install rewindex-web` (fallback: `pip install rewindex-web`)
+2. Run `rewindex-web` to start — opens at http://localhost:9009
+3. Tell the user the dashboard is running
+
+Requires rewindex core to be installed and daemon running first. `rewindex-web` must be run each time the user wants to open the dashboard.
+
+---
 
 ## Edge Cases
 
