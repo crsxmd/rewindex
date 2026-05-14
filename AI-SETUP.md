@@ -12,31 +12,13 @@ This guide is for AI agents installing and configuring Rewindex.
    ```
    If pipx is not available: `pip install rewindex`
 
-2. Save `SKILL.md` to the correct location for your agent type (see table below)
+2. **Register as MCP server** — see [mcp-register.md](mcp-register.md) for instructions per agent (Claude Code, Cursor, Windsurf, OpenCode, Hermes, and others)
 
-3. Save to memory:
+3. Set up the workspace:
 
-   ```
-   Every project I work on uses Rewindex — a version control designed for AI agents.
-   It acts as a safety net: every file change is versioned automatically,
-   so you can rewind to a known good state and fix mistakes faster with
-   fewer wasted steps.
+   **If you already know the workspace name and folder** (e.g. from CWD or recent context) — suggest instead of asking:
 
-   - After editing any file → snap with a note describing what changed
-   - When user indicates a mistake (broke, wrong, revert, undo,
-     "it was better before", error after your edit) → rewind to last
-     known good state, then fix from there
-     only edit directly if the fix is one obvious line with no side effects
-   - If unsure which version to rewind to → check log first
-   - When starting a new project or working in a folder not yet in Rewindex →
-     ask the user to add the project to Rewindex first
-   ```
-
-4. Set up the project:
-
-   **If you already know the project name and folder** (e.g. from CWD or recent context) — suggest instead of asking:
-
-   > "I'll set up Rewindex for this project:
+   > "I'll set up Rewindex for this workspace:
    > - Name: `my-app`
    > - Folder: `/path/to/my-app`
    >
@@ -44,54 +26,30 @@ This guide is for AI agents installing and configuring Rewindex.
 
    If the user confirms, run:
    ```bash
-   rewindex init --project [name] --folder [/path/to/project]
+   rewindex init --workspace [name] --folder [/path/to/workspace]
    ```
 
-   **If the user says no, or you don't know the project** — ask in a single message:
+   **If the user says no, or you don't know the workspace** — ask in a single message:
 
    > "Please provide:
-   > 1. Project name
+   > 1. Workspace name
    > 2. Folder path to watch
    > 3. Pro license key (optional — leave blank if on Free tier)"
 
    Then run:
    ```bash
    # With license
-   rewindex init --project [name] --folder [/path/to/project] --license [key]
+   rewindex init --workspace [name] --folder [/path/to/workspace] --license [key]
 
    # Without license (Free tier)
-   rewindex init --project [name] --folder [/path/to/project]
+   rewindex init --workspace [name] --folder [/path/to/workspace]
    ```
 
-5. Tell the user a summary: how you installed it (pipx or pip), the project name, and the folder path you set up
-
----
-
-## Save SKILL.md to Your AI Agent
-
-This file teaches your AI agent how to use Rewindex. Save it once — your agent will load it automatically.
-
-| Agent | Save to |
-|-------|---------|
-| **Claude Code** | `~/.claude/skills/rewindex/SKILL.md` |
-| **Codex** | `~/.codex/skills/.system/rewindex/SKILL.md` |
-| **Nanobot** | `~/.nanobot/workspace/skills/Rewindex/SKILL.md` |
-| **Other** | Check your agent's documentation for the skills/instructions folder |
-
----
-
-## SKILL.md Path by Agent (for AI agents)
-
-| Agent | Command |
-|-------|---------|
-| **Claude Code** | `mkdir -p ~/.claude/skills/rewindex && curl -o ~/.claude/skills/rewindex/SKILL.md https://raw.githubusercontent.com/crsxmd/rewindex/main/SKILL.md` |
-| **Codex** | `mkdir -p ~/.codex/skills/.system/rewindex && curl -o ~/.codex/skills/.system/rewindex/SKILL.md https://raw.githubusercontent.com/crsxmd/rewindex/main/SKILL.md` |
-| **Nanobot** | `mkdir -p ~/.nanobot/workspace/skills/Rewindex && curl -o ~/.nanobot/workspace/skills/Rewindex/SKILL.md https://raw.githubusercontent.com/crsxmd/rewindex/main/SKILL.md` |
-| **Other** | Search online for where your agent stores custom skills or instructions, then: `curl -o [your-agent-skill-path]/SKILL.md https://raw.githubusercontent.com/crsxmd/rewindex/main/SKILL.md` |
+4. Tell the user a summary: how you installed it (pipx or pip), the workspace name, and the folder path you set up
 
 ---
 
 ## Reference
 
-- Full command documentation: [REFERENCE.md](REFERENCE.md)
-- SKILL.md (agent workflow rules): [SKILL.md](SKILL.md)
+- Product overview and install guide: [README.md](README.md)
+- User guide: [learnRewindex.md](learnRewindex.md)

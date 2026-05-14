@@ -1,5 +1,43 @@
 # Rewindex Changelog
 
+## v1.3.0 — 2026-05-12
+
+- Built-in dashboard: `rewindex web` starts the dashboard on port 9009
+- Custom port support: `rewindex web -p 8080`
+- Dashboard is now included in the core package. No separate install needed.
+- Edit session, flag, and pre-compute settings directly from the dashboard
+- Improved loading experience with skeleton placeholders
+- Redesigned rewind confirmation with clear warnings and save target info
+- Instant feedback on daemon start/stop/restart actions
+- Pro-only settings are now visually marked and locked for free users
+- Fixed a memory issue in the background daemon
+
+---
+
+## v1.2.1 — 2026-05-10
+
+- Dashboard: flags page for viewing, creating, and deleting version milestones
+- Dashboard: inline diff viewer with syntax highlighting
+- Dashboard: related files view (files that frequently change together)
+- Sessions and snapshots now show lines added/removed
+- Automatic database migration for existing workspaces
+
+---
+
+## v1.2.0 — 2026-05-07
+
+- Added MCP server support — AI agents can now call Rewindex tools directly without extra setup
+- Setup guide now covers Claude Code, Cursor, Windsurf, Cline, OpenCode, OpenClaw, Nanobot, and Hermes
+- Simplified AI agent setup: no SKILL.md or memory configuration needed
+
+---
+
+## v1.1.0 — 2026-05-07
+
+- Added flag system — mark any snapshot with a named flag for easy reference and navigation
+
+---
+
 ## v1.0.5 — 2026-04-28
 
 - License activation now uses direct API (faster, more reliable)
