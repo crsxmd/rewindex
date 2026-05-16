@@ -1,5 +1,48 @@
 # Rewindex Changelog
 
+## v1.4.4 - 2026-05-15
+
+- Dashboard redesign: unified visual theme with accent bars and hover effects
+- Fixed update button not working on PEP 668 managed environments
+- Removed deprecated rewindex-web card from update page
+
+---
+
+## v1.4.3 - 2026-05-15
+
+- New MCP tools for code audit: `search_sessions_by_file`, `get_session_diff`, `find_pattern_introduced`
+
+---
+
+## v1.4.2 — 2026-05-15
+
+- Fixed dashboard diff viewer not working for older snapshots
+
+---
+
+## v1.4.1 — 2026-05-15
+
+- Fixed missing MCP instructions for notes and trash management
+
+---
+
+## v1.4.0 — 2026-05-13
+
+- Windows support (beta). No separate plugin needed.
+- Version check on `rewindex web` start. Recommends update if a newer version is available.
+- Website and docs updated to match v1.3+ changes
+
+---
+
+## v1.3.1 — 2026-05-13
+
+- Fixed dashboard flag create and delete not working
+- Fixed dashboard workspace setup command
+- Fixed dashboard license activation
+- Notes now update the dashboard in real-time without browser refresh
+
+---
+
 ## v1.3.0 — 2026-05-12
 
 - Built-in dashboard: `rewindex web` starts the dashboard on port 9009

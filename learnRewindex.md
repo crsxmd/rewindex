@@ -371,5 +371,5 @@ Your AI will check the log, find the right session, and restore everything.
 | Does it work with Git? | Yes. Rewindex captures the changes between commits. Use Git for version control, Rewindex for the work in between. |
 | Can I use it without AI agents? | Yes, but you will not be able to note sessions through chat. You can still flag and rewind from the dashboard. Rewindex works best with AI agents through MCP. |
 | How much disk space does it use? | Very little. Diffs are compressed. Check the dashboard for exact numbers. |
-| What platforms are supported? | Linux and macOS. Windows support is available as an experimental release. |
+| What platforms are supported? | macOS, Linux, and Windows (beta). |
 | Is it free? | Free forever. No account required. Pro tier adds more workspaces and pre-compute fullbase. See [rewindex.org](https://rewindex.org). |

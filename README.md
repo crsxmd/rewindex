@@ -5,13 +5,13 @@
 
 **Rewindex — Auto-snapshot tool for AI agents**
 
-Free. Local. Always on.
+Auto-snapshot tool for AI agents. Automatically backs up every file change so you can recover from AI mistakes instantly. Code worry-free. Free and local.
 
-Every time you or your AI saves a file, Rewindex captures a version automatically. No commits needed. When something breaks, just tell your AI "undo that" and it rolls back instantly. No cloud, no account required.
+- **Versioning**: snap, rewind, and track every change your AI makes
+- **Change visibility**: view diffs, session logs, and full file history
+- **Changelog**: flag milestones and export as CHANGELOG.md
 
-- Mistake? Check the log, rewind to a known good state
-
-Works with Git. Rewind the code that you didn't commit.
+Works with any AI agent via MCP. Works with Git. Rewind the code that you didn't commit.
 
 **[rewindex.org](https://rewindex.org)** | [GitHub](https://github.com/crsxmd/rewindex)
 
@@ -43,7 +43,7 @@ Works with Git. Rewind the code that you didn't commit.
 
 ## Quick Start
 
-> **Supported platforms: macOS and Linux only.**
+> **Supported platforms: macOS, Linux, and Windows (beta).**
 
 Requires Python 3.10+.
 
